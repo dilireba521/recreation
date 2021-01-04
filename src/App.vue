@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <div>八皇后</div>
+    <eight-queen></eight-queen>
   </div>
 </template>
 
 <script>
+import EightQueen from "@/components/EightQueen.vue"
 export default {
   name: 'App',
+  components:{
+    EightQueen
+  }
 }
 </script>
 
