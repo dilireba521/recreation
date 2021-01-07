@@ -9,5 +9,5 @@ Vue.filter("filesName", function (val) {
     "Gobang": "五子棋",
     "MineClearance": "扫雷",
   }
-  return obj[val]
+  return obj[val] || val
 })
