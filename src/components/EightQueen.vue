@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <m-button value="重新开始"></m-button>
+    </div>
     <div class="graid">
       <div v-for="(row, r_index) in graid" :key="r_index" class="row">
         <div
@@ -15,6 +18,7 @@
   </div>
 </template>    
 <script>
+import mButton from "@/components/button/button.vue";
 const graid = new Array(8).fill(1).map((_, r) => {
   return new Array(8).fill(1).map((_, c) => {
     return {
@@ -29,6 +33,7 @@ export default {
       graid,
     };
   },
+  components: { mButton },
   created() {
     // console.log(graid);
   },
@@ -76,24 +81,23 @@ export default {
   },
 };
 </script>
-<style scoped>
-.graid {
-  display: inline-block;
-}
-.row:nth-child(odd) .col:nth-child(odd) {
-  background-color: gray;
-}
-.row:nth-child(even) .col:nth-child(even) {
-  background-color: gray;
-}
-.row {
-  line-height: 0;
-}
-.col {
-  float: left;
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
-  border: 1px solid grey;
-}
+<style lang="sass" scoped>
+.graid
+  display: inline-block
+
+.row:nth-child(odd) .col:nth-child(odd)
+  background-color: $black75
+
+.row:nth-child(even) .col:nth-child(even)
+  background-color: $black75
+
+.row
+  line-height: 0
+
+.col
+  float: left
+  width: 80px
+  height: 80px
+  line-height: 80px
+  border: 1px solid $black75
 </style>
