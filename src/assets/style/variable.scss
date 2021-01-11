@@ -8,5 +8,7 @@ $red: rgba(244, 108, 107,1);
 $red15: rgba(244, 108, 107,.15);
 $blue: rgba(64, 158, 255,1);
 $blue15: rgba(64, 158, 255,.15);
-$gree:rgba(103, 194, 58,1);
-$gree15:rgba(103, 194, 58,.15);
+$green:rgba(103, 194, 58,1);
+$green15:rgba(103, 194, 58,.15);
+
+@import "./layout.scss";

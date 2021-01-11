@@ -1,0 +1,27 @@
+.l-pl5 {
+  padding-left: 5px;
+}
+.l-pr5 {
+  padding-right: 5px;
+}
+.l-pb10 {
+  padding-bottom: 10px;
+}
+.l-btn {
+  display: inline-block;
+  min-width: 46px;
+  padding: 4px 8px;
+  margin-bottom: 10px;
+  border: 1px solid $black75;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  &:hover{
+    background: $black15
+  }
+}
+
+.l-input {
+  height: 32px;
+  font-size: 16px;
+}

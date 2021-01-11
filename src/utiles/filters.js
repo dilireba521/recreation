@@ -8,6 +8,7 @@ Vue.filter("filesName", function (val) {
     "EightQueen": "八皇后",
     "Gobang": "五子棋",
     "MineClearance": "扫雷",
+    "CaesarCipher": "凯撒密码",
   }
   return obj[val] || val
 })
