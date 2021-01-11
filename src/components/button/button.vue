@@ -1,5 +1,5 @@
 <template>
-  <div class="btn">{{ value }}</div>
+  <div class="l-btn">{{ value }}</div>
 </template>
 <script>
 export default {
@@ -15,17 +15,3 @@ export default {
   },
 };
 </script> 
-
-<style lang="sass" scoped>
-.btn
-  display: inline-block
-  min-width: 46px
-  padding: 4px 8px
-  margin-bottom: 10px
-  border: 1px solid $black75
-  border-radius: 6px
-  cursor: pointer
-
-  &:hover
-    background: $black15
-</style>

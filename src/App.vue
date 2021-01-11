@@ -10,7 +10,9 @@
         {{ file | filesName }}
       </div>
     </div>
-    <component :is="mComponent"></component>
+    <div class="content">
+      <component :is="mComponent"></component>
+    </div>
   </div>
 </template>
 
@@ -49,34 +51,41 @@ export default {
 };
 </script>
 
-<style lang="sass">
-.list
-  overflow: auto
-  position: absolute
-  bottom: 0
-  top: 0
-  left: 0
-  width: 10%
-  height: 100%
-  padding: 20px 0
-  border-right: 1px solid #black75
-  background-color: #ffffff
+<style lang="scss">
+.list {
+  overflow: auto;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  padding: 20px 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  .cell {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:hover {
+      background: rgba(64, 158, 255, 0.15);
+    }
+  }
+}
+.content {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 12%;
+}
 
-.cell
-  border-bottom: 1px solid #black75
-  padding: 4px 8px
-  cursor: pointer
-  text-overflow: ellipsis
-  white-space: nowrap
-
-  &:hover
-    background: $blue15
-
-#app
-  font-family: Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  text-align: center
-  color: #2c3e50
-  margin-top: 60px
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>

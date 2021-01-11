@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <m-button value="重新开始"></m-button>
+      <m-button value="重新开始" @click.native="restart"></m-button>
     </div>
     <div class="graid">
       <div v-for="(row, r_index) in graid" :key="r_index" class="row">
@@ -38,8 +38,15 @@ export default {
     // console.log(graid);
   },
   methods: {
+    //重新开局
+    restart() {
+      for (let i = 0; i < this.graid[0].length; i++) {
+        for (let j = 0; j < this.graid.length; j++) {
+          this.graid[i][j].ok = false;
+        }
+      }
+    },
     select(r_index, c_index) {
-      console.log(r_index, c_index);
       if (this.validate(r_index, c_index)) {
         this.graid[r_index][c_index].ok = true;
       } else {
@@ -84,12 +91,13 @@ export default {
 <style lang="sass" scoped>
 .graid
   display: inline-block
+  border: 1px solid $black50
 
 .row:nth-child(odd) .col:nth-child(odd)
-  background-color: $black75
+  background-color: $black50
 
 .row:nth-child(even) .col:nth-child(even)
-  background-color: $black75
+  background-color: $black50
 
 .row
   line-height: 0
@@ -99,5 +107,5 @@ export default {
   width: 80px
   height: 80px
   line-height: 80px
-  border: 1px solid $black75
+  color: $green
 </style>
