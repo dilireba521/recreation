@@ -53,7 +53,6 @@ export default {
     Caesar(str, num) {
       var newStr = ""; //接收结果
       var _num = Number(num);
-      debugger;
       for (var i = 0; i < str.length; i++) {
         if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) {
           //加密时内容为从前向后解析，解密时内容为从后向前解析，
