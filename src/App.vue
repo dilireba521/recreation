@@ -25,8 +25,8 @@ export default {
   data() {
     return {
       mFiles: null,
-      mComponent: "",~
-    };~
+      mComponent: "",
+    };
   },
   components: {},
   created() {
