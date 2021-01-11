@@ -2,7 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 
 
-require('./mock/mock')  //mock
 import "./utiles/filters"   //global filter
 
 
