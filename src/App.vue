@@ -5,6 +5,7 @@
         v-for="file in mFiles"
         :key="file"
         class="cell"
+        :class="mComponent == file && 'is-active'"
         @click="select(file)"
       >
         {{ file | filesName }}
@@ -24,8 +25,8 @@ export default {
   data() {
     return {
       mFiles: null,
-      mComponent: "",
-    };
+      mComponent: "",~
+    };~
   },
   components: {},
   created() {
@@ -69,7 +70,8 @@ export default {
     cursor: pointer;
     text-overflow: ellipsis;
     white-space: nowrap;
-    &:hover {
+    &:hover,
+    &.is-active {
       background: rgba(64, 158, 255, 0.15);
     }
   }
