@@ -1,3 +1,4 @@
+// 普通组件方式封装input
 <template>
   <input
     :value="value"

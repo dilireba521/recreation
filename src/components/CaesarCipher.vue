@@ -5,18 +5,21 @@
     <br />
     <div class="l-pb10">
       <label for="" class="l-pr5">正常文本</label>
-      <m-input v-model="value1"></m-input>
+      <m-input-default v-model="value1"></m-input-default>
       <m-input v-model="value2" :setting="settingNumber"></m-input>
     </div>
     <div>
-      <label for="" class="l-pr5">翻译文本</label>
-      <m-input v-model="value3"></m-input>
+      <label for="" class="l-pr5">翻译文本：</label>
+      {{ value3 }}
     </div>
   </div>
 </template>
 <script>
 import mInput from "@/components/input/input.vue";
+import mInputDefault from "@/components/input/index.vue";
 import mButton from "@/components/button/button";
+import Mock from "mockjs";
+
 export default {
   data() {
     return {
@@ -29,19 +32,24 @@ export default {
       value3: "", //翻译文本
     };
   },
-  components: { mInput, mButton },
+  components: { mInput, mButton, mInputDefault },
+  created() {
+    this.value1 = Mock.mock("@name");
+    this.translate();
+  },
   methods: {
+    blur() {
+      console.log(this.value1);
+    },
     //清空文本框
     clearText() {
       this.value1 = "";
       this.value2 = 1;
       this.value3 = "";
+      console.log("this.value1" + this.value1);
     },
     //翻译
     translate() {
-      console.log(this.value1);
-      console.log(this.value2);
-
       if (this.value1.length > 0 && this.value2.toString().length > 0) {
         this.value3 = this.Caesar(this.value1, this.value2);
       }
