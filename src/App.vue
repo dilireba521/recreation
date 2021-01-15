@@ -19,6 +19,8 @@
 
 <script>
 import Vue from "vue";
+// import "@/utiles/responsive.js";
+// import "@/utiles/resDemo.js";
 
 export default {
   name: "App",
@@ -31,6 +33,10 @@ export default {
   components: {},
   created() {
     this.loadingFiles();
+    this.$layer({
+      content:
+              "<div style='color:#00e0a1;padding:20px;'>这里是内容信息！"+ this.count +"</div>",
+    })
   },
   methods: {
     //重新开局
