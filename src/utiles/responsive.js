@@ -2,7 +2,6 @@
 let x;
 // let y;
 // let f = n => n * 100 + 100;
-
 let active;
 
 let onXChanged = function (cb) {
@@ -48,5 +47,3 @@ onXChanged(() => {
   document.write(`hello ${x.value}`);
 });
 
-// x.value = 2; // 300
-// x.value = 3; // 400

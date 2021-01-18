@@ -8,7 +8,7 @@ export default {
         Vue.prototype.$layer = function (setting) {
             if (setting instanceof Object && typeof (setting) == "object" && !Array.isArray(setting)) {
                 let mLayer = Vue.extend({
-                    data:function(){
+                    data: function () {
                         return {}
                     },
                     props: {
@@ -19,9 +19,9 @@ export default {
                             }
                         }
                     },
-                    template:'<div>layer</div>',
+                    template: '<div>' + setting.content + '</div>',
                 })
-                let mLayerDom =  new mLayer().$mount()
+                let mLayerDom = new mLayer().$mount()
                 document.body.appendChild(mLayerDom.$el)
             } else {
                 alert("参数类型要是Object")
