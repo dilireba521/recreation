@@ -12,6 +12,7 @@
       </div>
     </div>
     <div class="content">
+      <m-button @click.native="handleClick"></m-button>
       <component :is="mComponent"></component>
     </div>
   </div>
@@ -19,8 +20,8 @@
 
 <script>
 import Vue from "vue";
-// import "@/utiles/responsive.js";
-// import "@/utiles/resDemo.js";
+import mButton from "@/components/button/button.vue";
+import "./utiles/responsive";
 
 export default {
   name: "App",
@@ -28,19 +29,23 @@ export default {
     return {
       mFiles: null,
       mComponent: "",
+      Y: 1,
     };
   },
-  components: {},
+  components: { mButton },
   created() {
     this.loadingFiles();
-    this.$layer({
-      content:
-              "<div style='color:#00e0a1;padding:20px;'>这里是内容信息！"+ this.count +"</div>",
-    })
   },
   methods: {
-    //重新开局
-    handleRestart() {},
+    //按钮点击
+    handleClick() {
+      this.$layer({
+        content:
+          "<div style='color:#00e0a1;padding:20px;'>这里是内容信息！" +
+          this.Y +
+          "</div>",
+      });
+    },
     //加载文件
     loadingFiles() {
       const files = require.context("@/components", false, /.vue$/).keys();
